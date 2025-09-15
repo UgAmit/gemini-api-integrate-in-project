@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Repository: gemini-api-integrate-in-project
+   Author: (Your Name Here)
+   Description: Modern CSS for the Gemini API Integration Project.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CSS Custom Properties (Root Variables)
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --color-primary: #007bff; /* Bootstrap Primary Blue */
+  --color-secondary: #6c757d; /* Bootstrap Secondary Grey */
+  --color-success: #28a745; /* Bootstrap Success Green */
+  --color-danger: #dc3545; /* Bootstrap Danger Red */
+  --color-warning: #ffc107; /* Bootstrap Warning Yellow */
+  --color-info: #17a2b8; /* Bootstrap Info Cyan */
+  --color-light: #f8f9fa; /* Bootstrap Light Grey */
+  --color-dark: #343a40; /* Bootstrap Dark Grey */
+  --color-white: #fff;
+  --color-black: #000;
+
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-size-base: 1rem; /* 16px */
+  --font-weight-base: 400;
+  --line-height-base: 1.5;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;  /* 4px */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;    /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 3rem;    /* 48px */
+
+  /* Border Radius */
+  --border-radius-sm: 0.2rem;
+  --border-radius-md: 0.25rem;
+  --border-radius-lg: 0.3rem;
+
+  /* Box Shadow */
+  --box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --box-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+  /* Transition Duration */
+  --transition-duration: 0.3s;
+}
+
+/* ==========================================================================
+   2. Base Styles (Mobile-First)
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+  line-height: var(--line-height-base);
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-duration);
+}
+
+a:hover {
+  color: darken(var(--color-primary), 10%);
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   3. Layout (Flexbox and Grid)
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  padding-right: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*  Responsive Container */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Flexbox Example */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: var(--spacing-md); /* Space between flex items */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Distribute items evenly */
+}
+
+.flex-item {
+  flex: 1 1 200px; /* Grow, shrink, and initial size */
+  padding: var(--spacing-md);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-sm);
+}
+
+/* Grid Example */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: var(--spacing-md);
+}
+
+.grid-item {
+  padding: var(--spacing-md);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-sm);
+}
+
+
+/* ==========================================================================
+   4. Components (Example)
+   ========================================================================== */
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  border-radius: var(--border-radius-md);
+  transition: color var(--transition-duration), background-color var(--transition-duration), border-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.btn-primary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  color: var(--color-white);
+  background-color: darken(var(--color-primary), 10%);
+  border-color: darken(var(--color-primary), 12%);
+}
+
+.btn-secondary {
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-secondary:hover {
+  color: var(--color-white);
+  background-color: darken(var(--color-secondary), 10%);
+  border-color: darken(var(--color-secondary), 12%);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.card-header {
+  padding: var(--spacing-md);
+  background-color: var(--color-light);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-
